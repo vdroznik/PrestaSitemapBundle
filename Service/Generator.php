@@ -47,9 +47,9 @@ class Generator extends AbstractGenerator
      *
      * @return void
      */
-    public function generate()
+    public function generate($name)
     {
-        $this->populate();
+        $this->populate($name);
 
         //---------------------
         //---------------------
@@ -76,7 +76,7 @@ class Generator extends AbstractGenerator
             return $this->cache->fetch($name);
         }
 
-        $this->generate();
+        $this->generate($name);
 
         if ('root' == $name) {
             return $this->getRoot();
